@@ -24,12 +24,31 @@ suite =
                 \_ ->
                     let
                         actual =
-                            Combinatorics.permutationsOf [1]
+                            Combinatorics.permutationsOf [ 1 ]
 
                         expected =
-                            [ [1] ]
+                            [ [ 1 ] ]
                     in
                     Expect.equal actual expected
+            , test "list of size two" <|
+                \_ ->
+                    let
+                        actual =
+                            Combinatorics.permutationsOf [ 1, 2 ]
 
+                        expected =
+                            [ [ 1, 2 ], [ 2, 1 ] ]
+                    in
+                    Expect.equal actual expected
+            , test "list of size three" <|
+                \_ ->
+                    let
+                        actual =
+                            Combinatorics.permutationsOf [ 1, 2, 3 ]
+
+                        expected =
+                            [ [ 1, 2, 3 ], [ 2, 1, 3 ], [ 2, 3, 1 ], [ 1, 3, 2 ], [ 3, 1, 2 ], [ 3, 2, 1 ] ]
+                    in
+                    Expect.equal actual expected
             ]
         ]
