@@ -20,5 +20,16 @@ suite =
                             [ [] ]
                     in
                     Expect.equal actual expected
+            , test "singleton" <|
+                \_ ->
+                    let
+                        actual =
+                            Combinatorics.permutationsOf [1]
+
+                        expected =
+                            [ [1] ]
+                    in
+                    Expect.equal actual expected
+
             ]
         ]
